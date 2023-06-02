@@ -26,9 +26,10 @@ export default function App(){
       case '/':
         setCurrentNumber((fistNumber/lastNumber).toString())
         return
-      case '%':
-        setCurrentNumber((fistNumber%lastNumber).toString())
-        return
+        case '%':
+          const percentage = fistNumber * (lastNumber / 100);
+          setCurrentNumber(percentage.toString());
+          return;
     }
   }
 
@@ -41,7 +42,7 @@ export default function App(){
 
     switch(buttonPressed){
       case 'DEL':
-        setCurrentNumber(currentNumber.substring(0,(currentNumber.length-3)))
+        setCurrentNumber(currentNumber.substring(0,(currentNumber.length-1)))
         setLastNumber('')
         return
       case 'LIMPAR':
